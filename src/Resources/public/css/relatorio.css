@@ -2,6 +2,10 @@
  * Novo SGA - Relatorio
  * @author Rogerio Lino <rogeriolino@gmail.com>
  */
+
+.relatorio-imagem{
+    background: #ce4646;
+}
 #report {
     padding: 10px;
 }
