@@ -19,7 +19,8 @@
                 <th title="{% trans %}Hora do Fim do atendimento{% endtrans %}">{% trans %}Fim{% endtrans %}</th>
                 <th title="{% trans %}Serviço escolhido na triagem{% endtrans %}">{% trans %}Serviço Triado{% endtrans %}</th>
                 <th>{% trans %}Status{% endtrans %}</th>
-                <th>{% trans %}Responsável{% endtrans %}</th>
+                <th>{% trans %}CPF do Responsável{% endtrans %}</th>
+                <th>{% trans %}Nome do Responsável{% endtrans %}</th>
                 <th>{% trans %}Atendente{% endtrans %}</th>
             </tr>
         </thead>
@@ -34,6 +35,7 @@
                     <td>{{ a.dataFim is empty ? "" : a.dataFim|date('H:i:s', relatorio.dados.timezone) }}</td>
                     <td>{{ a.servico.nome }}</td>
                     <td>{{ a.status }}</td>
+                    <td>{{ a.cliente ? a.cliente.documento : '' }}</td>
                     <td>{{ a.cliente ? a.cliente.nome : '' }}</td>
                     <td>{{ a.usuario ? a.usuario.login : '' }}</td>
                 </tr>
