@@ -34,7 +34,7 @@
                     <td>{{ a.dataInicio is empty ? "" : a.dataInicio|date('H:i:s', relatorio.dados.timezone) }}</td>
                     <td>{{ a.dataFim is empty ? "" : a.dataFim|date('H:i:s', relatorio.dados.timezone) }}</td>
                     <td>{{ a.servico.nome }}</td>
-                    {% if a.servico == "nao_compareceu" and a.senha.sigla == "ATD" %}
+                    {% if a.status == "nao_compareceu" and a.senha.sigla == "ATD" %}
                         <td>Triagem</td>
                     {% else %}
                         <td>{{ a.status }}</td>
