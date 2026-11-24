@@ -31,9 +31,13 @@
                     <td>{{ a.dataChegada|date('d/m/Y', relatorio.dados.timezone) }}</td>
                     <td>{{ a.dataChegada|date('H:i:s', relatorio.dados.timezone) }}</td>
 
-                    <td>{{ a.dataChamada is empty ? "--" : a.dataChamada|date('H:i:s', relatorio.dados.timezone) }}</td>
+                    {% if a.senha.sigla == "ATD" %}
+                        --
+                    {% else %}
+                       <td>{{ a.dataChamada is empty ? "--" : a.dataChamada|date('H:i:s', relatorio.dados.timezone) }}</td>
+                    {% endif %}
 
-                    <td>{{ a.dataInicio is empty ? "--" : a.dataInicio|date('H:i:s', relatorio.dados.timezone) }}</td>
+                    <td>{{ a.dataInicio is empty ? "" : a.dataInicio|date('H:i:s', relatorio.dados.timezone) }}</td>
                     <td>{{ a.dataFim is empty ? "" : a.dataFim|date('H:i:s', relatorio.dados.timezone) }}</td>
                     <td>{{ a.servico.nome }}</td>
                     {% if a.status == "nao_compareceu" and a.senha.sigla == "ATD" %}
