@@ -32,7 +32,7 @@
                     <td>{{ a.dataChegada|date('H:i:s', relatorio.dados.timezone) }}</td>
 
                     {% if a.senha.sigla == "ATD" %}
-                        --
+                        <td>--</td>
                     {% else %}
                        <td>{{ a.dataChamada is empty ? "--" : a.dataChamada|date('H:i:s', relatorio.dados.timezone) }}</td>
                     {% endif %}
